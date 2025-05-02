@@ -24,12 +24,13 @@ function OurImpactSection() {
       ref={ref}
       style={{
         backgroundColor: '#f0f9f4',
-        padding: isMobile ? '60px 16px' : '100px 20px',
+        padding: isMobile ? '40px 20px' : '100px 20px',
         textAlign: 'center',
         borderRadius: '24px',
         margin: '60px auto',
         boxShadow: '0 12px 36px rgba(0, 0, 0, 0.06)',
         maxWidth: '1200px',
+        transition: 'all 0.3s ease-in-out',
       }}
     >
       <p style={{
@@ -47,6 +48,7 @@ function OurImpactSection() {
         maxWidth: '800px',
         margin: '0 auto 40px',
         lineHeight: '1.8',
+        fontWeight: '400',
       }}>
         Trained over <strong>7,000 individuals</strong> in advanced horticulture techniques. <br />
         Distributed <strong>40+ lakhs</strong> of high-quality planting materials. <br />
@@ -71,6 +73,7 @@ function OurImpactSection() {
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
               minWidth: isMobile ? '100%' : '220px',
               flex: '1',
+              transition: 'all 0.3s ease-in-out',
             }}
           >
             <h3 style={{
@@ -78,6 +81,7 @@ function OurImpactSection() {
               color: '#2F4F2F',
               fontWeight: '700',
               marginBottom: '10px',
+              letterSpacing: isMobile ? '0' : '-1px',
             }}>
               {inView ? (
                 <CountUp
@@ -92,10 +96,11 @@ function OurImpactSection() {
               )}
             </h3>
             <p style={{
-              fontSize: '14px',
+              fontSize: isMobile ? '14px' : '16px',
               color: '#666',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
+              fontWeight: '500',
             }}>
               {stat.label}
             </p>
@@ -109,6 +114,7 @@ function OurImpactSection() {
         margin: '0 auto 30px',
         color: '#2E3D2C',
         lineHeight: '1.7',
+        fontWeight: '400',
       }}>
         <strong>Join the Horticulture Revolution!</strong> Whether you're a seasoned farmer, a budding entrepreneur, or a passionate gardener, we invite you to be part of the transformation.
       </p>
@@ -125,6 +131,7 @@ function OurImpactSection() {
         cursor: 'pointer',
         boxShadow: '0 4px 12px rgba(62, 91, 58, 0.3)',
         transition: 'all 0.3s ease',
+        width: isMobile ? '100%' : 'auto',
       }}>
         Get Involved
       </button>
