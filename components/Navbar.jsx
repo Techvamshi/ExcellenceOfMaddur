@@ -22,10 +22,10 @@ const Navbar = () => {
     <>
       <style jsx>{`
         .navbar-container {
-          margin-top: 35px;
-          margin-left: 110px;
+          margin: 35px auto 0 auto;
           height: 50px;
-          width: 1205px;
+          max-width: 1205px;
+          width: 90%;
           background-color: green;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
