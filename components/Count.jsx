@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import CountUp from 'react-countup';
@@ -16,12 +16,15 @@ function OurImpactSection() {
     { label: 'Sustainable Farming Practices', value: 1, suffix: '+' },
   ];
 
+  // Check if device width is small (for responsiveness)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <section
       ref={ref}
       style={{
         backgroundColor: '#f0f9f4',
-        padding: '100px 20px',
+        padding: isMobile ? '60px 16px' : '100px 20px',
         textAlign: 'center',
         borderRadius: '24px',
         margin: '60px auto',
@@ -30,20 +33,19 @@ function OurImpactSection() {
       }}
     >
       <p style={{
-        fontSize: '42px',
-        color: '#2F4F2F',
+        fontSize: isMobile ? '28px' : '42px',
+        color: 'green',
         fontWeight: 1000,
         marginBottom: '20px',
-        color:'green',
       }}>
         Our Impact
       </p>
 
       <p style={{
-        fontSize: '18px',
+        fontSize: isMobile ? '16px' : '18px',
         color: '#444',
         maxWidth: '800px',
-        margin: '0 auto 60px',
+        margin: '0 auto 40px',
         lineHeight: '1.8',
       }}>
         Trained over <strong>7,000 individuals</strong> in advanced horticulture techniques. <br />
@@ -53,26 +55,26 @@ function OurImpactSection() {
 
       <div style={{
         display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
         justifyContent: 'center',
-        gap: '40px',
+        gap: '20px',
         flexWrap: 'wrap',
-        marginBottom: '60px',
+        marginBottom: '40px',
       }}>
         {stats.map((stat, idx) => (
           <div
             key={idx}
             style={{
               background: '#ffffff',
-              padding: '30px 20px',
+              padding: isMobile ? '20px' : '30px 20px',
               borderRadius: '16px',
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
-              minWidth: '220px',
+              minWidth: isMobile ? '100%' : '220px',
               flex: '1',
-              transition: 'transform 0.3s ease',
             }}
           >
             <h3 style={{
-              fontSize: '48px',
+              fontSize: isMobile ? '32px' : '48px',
               color: '#2F4F2F',
               fontWeight: '700',
               marginBottom: '10px',
@@ -90,7 +92,7 @@ function OurImpactSection() {
               )}
             </h3>
             <p style={{
-              fontSize: '16px',
+              fontSize: '14px',
               color: '#666',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
@@ -102,7 +104,7 @@ function OurImpactSection() {
       </div>
 
       <p style={{
-        fontSize: '20px',
+        fontSize: isMobile ? '16px' : '20px',
         maxWidth: '700px',
         margin: '0 auto 30px',
         color: '#2E3D2C',
@@ -113,8 +115,8 @@ function OurImpactSection() {
 
       <button style={{
         marginTop: '20px',
-        padding: '14px 32px',
-        fontSize: '16px',
+        padding: '12px 28px',
+        fontSize: isMobile ? '14px' : '16px',
         fontWeight: '600',
         backgroundColor: '#3E5B3A',
         color: '#fff',
