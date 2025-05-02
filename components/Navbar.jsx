@@ -79,7 +79,7 @@ const Navbar = () => {
           background-color: #655967;
           border-radius: 10px;
           margin-top: 38px;
-          margin-left: -600px;
+          margin-left: -608px;
           animation: colorShift 2s infinite ease-in-out;
         }
 
