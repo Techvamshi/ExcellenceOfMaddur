@@ -6,7 +6,7 @@ const Navbar = () => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setAnimate(true), 100);
+    setTimeout(() => setAnimate(true), 100); // small delay for mount
   }, []);
 
   const navItems = [
@@ -22,16 +22,18 @@ const Navbar = () => {
     <>
       <style jsx>{`
         .navbar-container {
-          margin: 35px auto 0 auto;
+          margin-top: 35px;
+          margin-left: 110px;
           height: 50px;
-          max-width: 1205px;
-          width: 90%;
+          width: 1205px;
           background-color: green;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
           display: flex;
           overflow: hidden;
-          clip-path: ${animate ? 'inset(0% 0% 0% 0%)' : 'inset(0% 50% 0% 50%)'};
+          clip-path: ${animate
+            ? 'inset(0% 0% 0% 0%)'
+            : 'inset(0% 50% 0% 50%)'};
           transition: clip-path 1s ease-in-out;
         }
 
@@ -77,7 +79,7 @@ const Navbar = () => {
           background-color: #655967;
           border-radius: 10px;
           margin-top: 38px;
-          margin-left: -608px;
+          margin-left: -600px;
           animation: colorShift 2s infinite ease-in-out;
         }
 
@@ -87,49 +89,6 @@ const Navbar = () => {
           50%  { background-color: #00bfa5; }
           75%  { background-color: #b2ff59; }
           100% { background-color: #2e7d32; }
-        }
-
-        /* Mobile-specific styles */
-        @media (max-width: 768px) {
-          .navbar-container {
-            flex-direction: column;
-            align-items: center;
-            height: auto;
-            padding: 15px 10px 20px 10px;
-            gap: 10px;
-            border-radius: 0 0 15px 15px;
-          }
-
-          .logo-container {
-            height: 45px;
-            margin-top: 0;
-          }
-
-          .logo-container video {
-            width: 100%;
-            height: 100%;
-            transform: scale(1.5);
-            object-fit: cover;
-          }
-
-          .link-group {
-            flex-direction: column;
-            gap: 12px;
-            margin-left: 0;
-            margin-top: 10px;
-            align-items: center;
-          }
-
-          .nav-link {
-            font-size: 16px;
-            color: #fff;
-            opacity: 0;
-            animation: ${animate ? 'fadeIn 0.5s ease forwards' : 'none'};
-          }
-
-          .animated-bar {
-            display: none;
-          }
         }
       `}</style>
 
@@ -145,8 +104,8 @@ const Navbar = () => {
               style={{
                 width: '120%',
                 height: '305%',
-                marginTop: '-54px',
-                marginLeft: '-4px',
+                marginTop:'-54px',
+                marginLeft:'-4px',
                 objectFit: 'cover',
                 transform: 'scale(2)',
                 transformOrigin: 'center',
