@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -23,24 +23,26 @@ const Navbar = () => {
       <style jsx>{`
         .navbar-container {
           margin-top: 35px;
-          margin-left: auto;
-          margin-right: auto;
           height: 50px;
-          width: 1205px;
+          width: 100%;
+          max-width: 1205px;
           background-color: green;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
           display: flex;
+          justify-content: space-between;
+          align-items: center;
           overflow: hidden;
-          clip-path: ${animate ? 'inset(0% 0% 0% 0%)' : 'inset(0% 50% 0% 50%)'};
+          clip-path: ${animate
+            ? 'inset(0% 0% 0% 0%)'
+            : 'inset(0% 50% 0% 50%)'};
           transition: clip-path 1s ease-in-out;
+          padding: 0 20px; /* Add padding to avoid overflow */
         }
 
         .link-group {
           display: flex;
-          flex-direction: row;
           gap: 50px;
-          margin-left: 200px;
           margin-top: 13px;
         }
 
@@ -69,7 +71,6 @@ const Navbar = () => {
           height: 55px;
           border-bottom-left-radius: 27px;
           overflow: hidden;
-          margin-top: -4px;
         }
 
         .animated-bar {
@@ -78,7 +79,6 @@ const Navbar = () => {
           background-color: #655967;
           border-radius: 10px;
           margin-top: 38px;
-          margin-left: -600px;
           animation: colorShift 2s infinite ease-in-out;
         }
 
@@ -88,6 +88,39 @@ const Navbar = () => {
           50%  { background-color: #00bfa5; }
           75%  { background-color: #b2ff59; }
           100% { background-color: #2e7d32; }
+        }
+
+        /* Responsive styling */
+        @media screen and (max-width: 1200px) {
+          .link-group {
+            gap: 20px; /* Reduce gap on smaller screens */
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .navbar-container {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .link-group {
+            flex-direction: column;
+            gap: 15px;
+            margin-left: 0;
+            margin-top: 10px;
+          }
+
+          .nav-link {
+            font-size: 14px; /* Smaller font size on smaller screens */
+          }
+
+          .logo-container video {
+            width: 100%;
+            height: auto;
+            margin-top: 0;
+            margin-left: 0;
+            transform: scale(1); /* Remove scale */
+          }
         }
       `}</style>
 
