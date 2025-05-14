@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -23,7 +23,8 @@ const Navbar = () => {
       <style jsx>{`
         .navbar-container {
           margin-top: 35px;
-          margin-left: 110px;
+          margin-left: auto;
+          margin-right: auto;
           height: 50px;
           width: 1205px;
           background-color: green;
@@ -31,9 +32,7 @@ const Navbar = () => {
           border-bottom-right-radius: 12px;
           display: flex;
           overflow: hidden;
-          clip-path: ${animate
-            ? 'inset(0% 0% 0% 0%)'
-            : 'inset(0% 50% 0% 50%)'};
+          clip-path: ${animate ? 'inset(0% 0% 0% 0%)' : 'inset(0% 50% 0% 50%)'};
           transition: clip-path 1s ease-in-out;
         }
 
@@ -104,8 +103,8 @@ const Navbar = () => {
               style={{
                 width: '120%',
                 height: '305%',
-                marginTop:'-54px',
-                marginLeft:'-4px',
+                marginTop: '-54px',
+                marginLeft: '-4px',
                 objectFit: 'cover',
                 transform: 'scale(2)',
                 transformOrigin: 'center',
